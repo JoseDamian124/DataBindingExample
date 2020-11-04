@@ -33,7 +33,8 @@
                 <TextBox Grid.Row="0"
                          Grid.Column="1"
                          Margin="2"
-                         x:Name="nombreTextBox"/>
+                         x:Name="nombreTextBox"
+                         Text="{Binding Date}"/>
                 <Label Grid.Row="1"
                        Grid.Column="0"
                        Content="Fecha"
@@ -41,7 +42,8 @@
                 <DatePicker Grid.Row="1"
                             Grid.Column="1"
                             Margin="2"
-                            x:Name="fechaDatePicker"/>
+                            x:Name="fechaDatePicker"
+                            Text="{Binding Date}"/>
             </Grid>
         </GroupBox>
         <Button Content="Modificar evento"

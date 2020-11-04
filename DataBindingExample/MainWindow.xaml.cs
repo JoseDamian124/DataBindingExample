@@ -30,8 +30,9 @@ namespace DataBindingExample
                 Title = "Reunion de trabajo",
                 Date = new DateTime(2020, 11, 03)
             };
-            nombreTextBox.Text = evento.Title;
-            fechaDatePicker.SelectedDate = evento.Date;
+            //nombreTextBox.Text = evento.Title;
+            //fechaDatePicker.SelectedDate = evento.Date;
+            DataContext = evento;
         
         }
 
@@ -43,5 +44,6 @@ namespace DataBindingExample
             fechaDatePicker.SelectedDate = evento.Date;
             MessageBox.Show(evento.Title + "\n" + evento.Date);
         }
+        
     }
 }

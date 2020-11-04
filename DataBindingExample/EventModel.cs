@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DataBindingExample
 {
-    class EventModel
+    class EventModel : INotifyPropertyChanged
     {
         private string title;
         private DateTime date;
@@ -17,6 +18,8 @@ namespace DataBindingExample
                 if (value != title)
                 {
                     title = value;
+                    OnPropertyChanged("Title");
+
                 }
             }
         }
@@ -31,14 +34,18 @@ namespace DataBindingExample
                 }
             }
         }
-            
 
-            
-
-            
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string propertyName)
+            {
+             if(PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
-    
-
+    }
+     
+   
     }
 
     
